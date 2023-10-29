@@ -51,7 +51,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="flex flex-col items-center justify-center gap-8">
-          &copy; 2023 Carter inc.
+          &copy; 2023 Cartapp inc.
           <div className="flex items-center justify-center gap-4">
             <a href="https://github.com/Vithrax" target="_blank">
               <Github className="h-5 w-5" />
