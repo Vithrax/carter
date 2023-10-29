@@ -6,9 +6,9 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex h-full flex-col items-center gap-4">
+    <div className="flex h-full flex-col items-center gap-16">
       {/* Title */}
-      <section className="mt-8">
+      <section id="start" className="space-y-8">
         <h1 className="text-center text-5xl font-bold tracking-tight">
           The ultimate <span className="text-primary">shopping</span> management
         </h1>
@@ -17,22 +17,24 @@ export default function Home() {
           Add your products, save and reuse. <br />
           Make it <span className="font-bold text-primary">YOURS.</span>
         </p>
-      </section>
 
-      {/* Buttons */}
-      <section className="mt-8 space-x-2">
-        <Button asChild>
-          <Link href="/sign-in">Start planning</Link>
-        </Button>
-        <Button variant="outline">
-          <Link href="#more">Learn more</Link>
-        </Button>
-      </section>
+        {/* Buttons */}
+        <div className="mx-auto space-x-2">
+          <div className="flex items-center justify-center gap-3">
+            <Button asChild>
+              <Link href="/sign-in">Start planning</Link>
+            </Button>
+            <Button variant="outline">
+              <Link href="#getting-started">Learn more</Link>
+            </Button>
+          </div>
+        </div>
 
-      {/* Users */}
-      <section className="mt-8 w-full bg-muted py-4 text-center font-semibold">
-        <span className="font-extrabold text-primary">30.000+</span> lists
-        created last year!
+        {/* Users */}
+        <div className="w-full bg-muted py-4 text-center font-semibold">
+          <span className="font-extrabold text-primary">30.000+</span> lists
+          created last year!
+        </div>
       </section>
 
       {/* Image stack */}
@@ -64,11 +66,11 @@ export default function Home() {
       </section>
 
       {/* Featured */}
-      <section className="w-full bg-muted px-2 py-4">
+      <section id="featured" className="w-full bg-muted px-2 py-8">
         <h3 className="text-center text-xs uppercase text-muted-foreground dark:text-zinc-300">
           Trusted by the best.
         </h3>
-        <div className="grid grid-cols-5 items-center gap-2">
+        <div className="mt-4 grid grid-cols-5 items-center gap-2">
           <div>
             <Image
               src="/logos/Netflix.png"
@@ -114,8 +116,8 @@ export default function Home() {
       </section>
 
       {/* How to start */}
-      <section id="more" className="w-full px-2 py-4">
-        <ul className="mt-8 space-y-20">
+      <section id="getting-started" className="w-full px-2 py-4">
+        <ul className="space-y-20">
           <li className="space-y-1">
             <h4 className="text-5xl font-extrabold text-zinc-300">01</h4>
             <p className="text-xl font-semibold text-primary">
@@ -150,8 +152,8 @@ export default function Home() {
       </section>
 
       {/* More details */}
-      <section className="mt-8 w-full bg-muted px-4 py-4">
-        <p className="mt-8 text-center">
+      <section id="details" className="w-full bg-muted px-4 py-12">
+        <p className="text-center">
           Cartapp is a fully web based application that enchance your experience
           and efficeny when buying groceries. Find below just few of many
           features that makes Cartapp an amazing app:
@@ -177,10 +179,10 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="mt-8 w-full px-4 py-4">
+      <section id="testimonials" className="w-full px-4 py-4">
         <ul className="space-y-16">
           <li>
-            <blockquote className="mt-6 border-l-2 pl-6 italic">
+            <blockquote className="border-l-2 pl-6 italic">
               I have no idea there is soo much to improve until i tried Cartapp.
               After 6 months of using it i cant even imagine how i was managing
               my groceries before!
@@ -247,7 +249,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="mt-8 w-full bg-muted px-2 py-4 text-center">
+      <section id="cta" className="w-full bg-muted px-2 py-12 text-center">
         <h3 className="text-5xl font-bold tracking-tight">Sounds good?</h3>
         <p className="mt-1 text-lg">
           Of course it does. <br />
