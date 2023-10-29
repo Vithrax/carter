@@ -59,8 +59,8 @@ export default function Home() {
       </section>
 
       {/* Featured */}
-      <section className="w-full bg-muted px-2 py-4">
-        <h3 className="text-center text-xs uppercase text-muted-foreground">
+      <section className="w-full bg-muted px-2 py-4 dark:bg-zinc-600">
+        <h3 className="text-center text-xs uppercase text-muted-foreground dark:text-zinc-300">
           Trusted by the best.
         </h3>
         <div className="grid grid-cols-5 items-center gap-2">
@@ -70,6 +70,7 @@ export default function Home() {
               alt="Amazon logo"
               width={885}
               height={524}
+              // className="brightness-50"
             />
           </div>
           <div>
@@ -78,6 +79,7 @@ export default function Home() {
               alt="Netflix logo"
               width={2265}
               height={755}
+              // className="grayscale"
             />
           </div>
           <div>
@@ -86,6 +88,7 @@ export default function Home() {
               alt="NIKE logo"
               width={512}
               height={512}
+              // className="grayscale"
             />
           </div>
           <div>
@@ -94,6 +97,7 @@ export default function Home() {
               alt="Youtube logo"
               width={2000}
               height={857}
+              // className="grayscale"
             />
           </div>
           <div>
@@ -102,6 +106,7 @@ export default function Home() {
               alt="Samsung logo"
               width={2250}
               height={800}
+              // className="grayscale"
             />
           </div>
         </div>
@@ -109,9 +114,6 @@ export default function Home() {
 
       {/* How it start */}
       <section className="w-full px-2 py-4">
-        <h3 className="w-full text-center text-2xl text-muted-foreground">
-          How to start?
-        </h3>
         <ul className="mt-8 space-y-20">
           <li className="space-y-1">
             <h4 className="text-5xl font-extrabold text-zinc-300">01</h4>
@@ -148,9 +150,6 @@ export default function Home() {
 
       {/* More details */}
       <section className="mt-8 w-full bg-muted px-4 py-4">
-        <h3 className="w-full text-center text-2xl text-muted-foreground">
-          Features
-        </h3>
         <p className="mt-8 text-center">
           Cartapp is a fully web based application that enchance your experience
           and efficeny when buying groceries. Find below just few of many
@@ -178,9 +177,6 @@ export default function Home() {
 
       {/* Testimonials */}
       <section className="mt-8 w-full px-4 py-4">
-        <h3 className="w-full text-center text-2xl text-muted-foreground">
-          Testimonials
-        </h3>
         <ul className="space-y-16">
           <li>
             <blockquote className="mt-6 border-l-2 pl-6 italic">
