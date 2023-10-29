@@ -247,13 +247,13 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="w-full bg-muted px-2 py-4 text-center">
+      <section className="mt-8 w-full bg-muted px-2 py-4 text-center">
         <h3 className="text-5xl font-bold tracking-tight">Sounds good?</h3>
         <p className="mt-1 text-lg">
           Of course it does. <br />
-          Dont&apos;t wait. Join Cartapp.
+          Dont&apos;t wait. Join Cartapp now.
         </p>
-        <Button size="lg" className="mb-8 mt-8">
+        <Button size="lg" className="mb-1 mt-8">
           <Link href="/sign-in">Start saving</Link>
         </Button>
       </section>
