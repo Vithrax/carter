@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex h-full flex-col items-center gap-16">
+    <div className="mt-20 flex h-full flex-col items-center gap-16">
       {/* Title */}
       <section id="start" className="space-y-8">
         <h1 className="text-center text-5xl font-bold tracking-tight">
@@ -116,10 +116,12 @@ export default function Home() {
       </section>
 
       {/* How to start */}
-      <section id="getting-started" className="w-full px-2 py-4">
+      <section id="getting-started" className="w-full px-6 py-4">
         <ul className="space-y-20">
           <li className="space-y-1">
-            <h4 className="text-5xl font-extrabold text-zinc-300">01</h4>
+            <h4 className="text-5xl font-extrabold text-zinc-300 dark:text-zinc-700">
+              01
+            </h4>
             <p className="text-xl font-semibold text-primary">
               Create a free account
             </p>
@@ -129,7 +131,9 @@ export default function Home() {
             </p>
           </li>
           <li className="space-y-1">
-            <h4 className="text-5xl font-extrabold text-zinc-300">02</h4>
+            <h4 className="text-5xl font-extrabold text-zinc-300 dark:text-zinc-700">
+              02
+            </h4>
             <p className="text-xl font-semibold text-primary">
               Build your own library
             </p>
@@ -139,7 +143,9 @@ export default function Home() {
             </p>
           </li>
           <li className="space-y-1">
-            <h4 className="text-5xl font-extrabold text-zinc-300">03</h4>
+            <h4 className="text-5xl font-extrabold text-zinc-300 dark:text-zinc-700">
+              03
+            </h4>
             <p className="text-xl font-semibold text-primary">
               Start saving money!
             </p>

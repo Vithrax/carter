@@ -7,12 +7,13 @@ import Providers from "@/components/providers";
 import { Toaster } from "sonner";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Carter | Home",
   description:
     "Ultimate shopping assistant. Record spendings, plan groceries, find the perfect balance. ",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [{ rel: "icon", url: "/favicon.ico" }]
 };
 
 export default function RootLayout({
