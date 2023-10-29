@@ -2,6 +2,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { AreaChart, RefreshCw, Shield, User2 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -14,14 +15,18 @@ export default function Home() {
         <p className="text-center text-muted-foreground">
           Plan your groceries list like never before. <br />
           Add your products, save and reuse. <br />
-          Make it <span className="font-bold text-primary">Yours.</span>
+          Make it <span className="font-bold text-primary">YOURS.</span>
         </p>
       </section>
 
       {/* Buttons */}
       <section className="mt-8 space-x-2">
-        <Button>Start planning</Button>
-        <Button variant="outline">Learn more</Button>
+        <Button asChild>
+          <Link href="/sign-in">Start planning</Link>
+        </Button>
+        <Button variant="outline">
+          <Link href="#more">Learn more</Link>
+        </Button>
       </section>
 
       {/* Users */}
@@ -59,27 +64,17 @@ export default function Home() {
       </section>
 
       {/* Featured */}
-      <section className="w-full bg-muted px-2 py-4 dark:bg-zinc-600">
+      <section className="w-full bg-muted px-2 py-4">
         <h3 className="text-center text-xs uppercase text-muted-foreground dark:text-zinc-300">
           Trusted by the best.
         </h3>
         <div className="grid grid-cols-5 items-center gap-2">
           <div>
             <Image
-              src="/logos/Amazon.png"
-              alt="Amazon logo"
-              width={885}
-              height={524}
-              // className="brightness-50"
-            />
-          </div>
-          <div>
-            <Image
               src="/logos/Netflix.png"
               alt="Netflix logo"
               width={2265}
               height={755}
-              // className="grayscale"
             />
           </div>
           <div>
@@ -88,16 +83,15 @@ export default function Home() {
               alt="NIKE logo"
               width={512}
               height={512}
-              // className="grayscale"
             />
           </div>
           <div>
             <Image
-              src="/logos/Youtube.png"
-              alt="Youtube logo"
-              width={2000}
-              height={857}
-              // className="grayscale"
+              src="/logos/Amazon.png"
+              alt="Amazon logo"
+              width={885}
+              height={524}
+              className="rounded-lg dark:bg-white"
             />
           </div>
           <div>
@@ -106,14 +100,21 @@ export default function Home() {
               alt="Samsung logo"
               width={2250}
               height={800}
-              // className="grayscale"
+            />
+          </div>
+          <div>
+            <Image
+              src="/logos/Youtube.png"
+              alt="Youtube logo"
+              width={2000}
+              height={857}
             />
           </div>
         </div>
       </section>
 
-      {/* How it start */}
-      <section className="w-full px-2 py-4">
+      {/* How to start */}
+      <section id="more" className="w-full px-2 py-4">
         <ul className="mt-8 space-y-20">
           <li className="space-y-1">
             <h4 className="text-5xl font-extrabold text-zinc-300">01</h4>
@@ -243,6 +244,18 @@ export default function Home() {
             </div>
           </li>
         </ul>
+      </section>
+
+      {/* CTA */}
+      <section className="w-full bg-muted px-2 py-4 text-center">
+        <h3 className="text-5xl font-bold tracking-tight">Sounds good?</h3>
+        <p className="mt-1 text-lg">
+          Of course it does. <br />
+          Dont&apos;t wait. Join Cartapp.
+        </p>
+        <Button size="lg" className="mb-8 mt-8">
+          <Link href="/sign-in">Start saving</Link>
+        </Button>
       </section>
     </div>
   );
