@@ -16,7 +16,7 @@ const MobileNav = () => {
           <Home className="h-5 w-5" />
           <span>Home</span>
         </MobileNavLink>
-        <MobileNavLink href="/app/lists" path={path}>
+        <MobileNavLink href="/app/recipes" path={path}>
           <BookText className="h-5 w-5" />
           <span>Recipes</span>
         </MobileNavLink>
