@@ -12,23 +12,23 @@ const MobileNav = () => {
   return (
     <nav className="absolute bottom-0 h-14 w-full border-t">
       <div className="grid h-full grid-cols-5">
-        <MobileNavLink href="/app" path={path}>
+        <MobileNavLink href="/main" path={path}>
           <Home className="h-5 w-5" />
           <span>Home</span>
         </MobileNavLink>
-        <MobileNavLink href="/app/recipes" path={path}>
+        <MobileNavLink href="/main/recipes" path={path}>
           <BookText className="h-5 w-5" />
           <span>Recipes</span>
         </MobileNavLink>
-        <MobileNavLink href="/app/lists" path={path}>
+        <MobileNavLink href="/main/lists" path={path}>
           <ListTodo className="h-5 w-5" />
           <span>Lists</span>
         </MobileNavLink>
-        <MobileNavLink href="/app/products" path={path}>
+        <MobileNavLink href="/main/products" path={path}>
           <Library className="h-5 w-5" />
           <span>Products</span>
         </MobileNavLink>
-        <MobileNavLink href="/app/account" path={path}>
+        <MobileNavLink href="/main/account" path={path}>
           <Settings className="h-5 w-5" />
           <span>Settings</span>
         </MobileNavLink>
@@ -61,7 +61,7 @@ const MobileNavLink = ({ path, href, children }: MobileNavLinkProps) => {
     <Link
       href={href}
       className={cn(
-        "flex flex-col items-center justify-center gap-1 px-3 py-1.5 text-xs",
+        "flex flex-col items-center justify-center gap-1 px-3 py-1.5 text-xs transition-all",
         {
           "bg-primary/10 text-primary": isActive(path, href),
         },

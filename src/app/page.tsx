@@ -28,7 +28,7 @@ export default async function Home() {
               {!session ? (
                 <Link href="/sign-in">Start planning</Link>
               ) : (
-                <Link href="/app">Go to app</Link>
+                <Link href="/main">Go to app</Link>
               )}
             </Button>
             {!session && (
