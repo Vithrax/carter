@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Home, Library, ListTodo, Settings } from "lucide-react";
+import { BookText, Home, Library, ListTodo, Settings } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { type ReactNode } from "react";
@@ -10,26 +10,30 @@ const MobileNav = () => {
   const path = usePathname();
 
   return (
-    <div className="absolute bottom-0 h-20 w-full border-t">
-      <div className="flex h-full items-center justify-around">
+    <nav className="absolute bottom-0 h-14 w-full border-t">
+      <div className="grid h-full grid-cols-5">
         <MobileNavLink href="/app" path={path}>
-          <Home />
+          <Home className="h-5 w-5" />
           <span>Home</span>
         </MobileNavLink>
         <MobileNavLink href="/app/lists" path={path}>
-          <ListTodo />
+          <BookText className="h-5 w-5" />
+          <span>Recipes</span>
+        </MobileNavLink>
+        <MobileNavLink href="/app/lists" path={path}>
+          <ListTodo className="h-5 w-5" />
           <span>Lists</span>
         </MobileNavLink>
         <MobileNavLink href="/app/products" path={path}>
-          <Library />
+          <Library className="h-5 w-5" />
           <span>Products</span>
         </MobileNavLink>
         <MobileNavLink href="/app/account" path={path}>
-          <Settings />
+          <Settings className="h-5 w-5" />
           <span>Settings</span>
         </MobileNavLink>
       </div>
-    </div>
+    </nav>
   );
 };
 
@@ -57,7 +61,7 @@ const MobileNavLink = ({ path, href, children }: MobileNavLinkProps) => {
     <Link
       href={href}
       className={cn(
-        "flex flex-col items-center justify-center rounded-lg px-3 py-1.5",
+        "flex flex-col items-center justify-center gap-1 px-3 py-1.5 text-xs",
         {
           "bg-primary/10 text-primary": isActive(path, href),
         },
