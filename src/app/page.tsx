@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="mt-20 flex h-full flex-col items-center gap-16">
+    <main className="mt-20 flex h-full flex-col items-center gap-16">
       {/* Title */}
       <section id="start" className="space-y-8">
         <h1 className="text-center text-5xl font-bold tracking-tight">
@@ -265,6 +265,6 @@ export default function Home() {
           <Link href="/sign-in">Start saving</Link>
         </Button>
       </section>
-    </div>
+    </main>
   );
 }

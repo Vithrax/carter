@@ -8,12 +8,13 @@ import { Toaster } from "sonner";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import type { Metadata } from "next";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Carter | Home",
   description:
     "Ultimate shopping assistant. Record spendings, plan groceries, find the perfect balance. ",
-  icons: [{ rel: "icon", url: "/favicon.ico" }]
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
 export default function RootLayout({
@@ -23,13 +24,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={GeistSans.className}>
+      <body className={cn(GeistSans.className, "antialiased")}>
         <Providers headers={headers()}>
-          <main className="overscroll-hidden grid min-h-[100dvh] w-full grid-rows-[auto,1fr,auto]">
+          <div className="overscroll-hidden grid min-h-[100dvh] w-full grid-rows-[auto,1fr,auto]">
             <Header />
             {children}
-            <Footer />
-          </main>
+          </div>
+          <Footer />
           <Toaster />
         </Providers>
       </body>
