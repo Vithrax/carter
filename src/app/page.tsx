@@ -1,10 +1,13 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { getServerAuthSession } from "@/server/auth";
 import { AreaChart, RefreshCw, Shield, User2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerAuthSession();
+
   return (
     <main className="mt-20 flex h-full flex-col items-center gap-16">
       {/* Title */}
@@ -21,12 +24,18 @@ export default function Home() {
         {/* Buttons */}
         <div className="mx-auto space-x-2">
           <div className="flex items-center justify-center gap-3">
-            <Button asChild>
-              <Link href="/sign-in">Start planning</Link>
+            <Button size={session ? "lg" : "default"} asChild>
+              {!session ? (
+                <Link href="/sign-in">Start planning</Link>
+              ) : (
+                <Link href="/app">Go to app</Link>
+              )}
             </Button>
-            <Button variant="outline">
-              <Link href="#getting-started">Learn more</Link>
-            </Button>
+            {!session && (
+              <Button variant="outline">
+                <Link href="#getting-started">Learn more</Link>
+              </Button>
+            )}
           </div>
         </div>
 

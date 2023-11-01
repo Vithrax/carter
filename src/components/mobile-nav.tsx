@@ -1,25 +1,10 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Home, ListTodo, Search, Settings } from "lucide-react";
+import { Home, Library, ListTodo, Settings } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
-
-const isActive = (path: string, href: string): boolean => {
-  const segments = path.split("/");
-
-  console.log({ segments });
-
-  // path should always have at least 2 segments, something went wrong
-  if (segments.length === 1) return false;
-
-  if (segments.length === 2) {
-    return href === `/${segments[1]}`;
-  } else {
-    return href === `/${segments[0]}/${segments[1]}`;
-  }
-};
+import React, { type ReactNode } from "react";
 
 const MobileNav = () => {
   const path = usePathname();
@@ -27,56 +12,59 @@ const MobileNav = () => {
   return (
     <div className="absolute bottom-0 h-20 w-full border-t">
       <div className="flex h-full items-center justify-around">
-        <Link
-          href="/app"
-          className={cn(
-            "flex flex-col items-center justify-center rounded-lg bg-primary/10 px-3 py-1.5",
-            {
-              "text-primary": isActive(path, "/app"),
-            },
-          )}
-        >
+        <MobileNavLink href="/app" path={path}>
           <Home />
           <span>Home</span>
-        </Link>
-        <Link
-          href="/app/lists"
-          className={cn(
-            "flex flex-col items-center justify-center px-3 py-1.5",
-            {
-              "text-primary": isActive(path, "/app/lists"),
-            },
-          )}
-        >
+        </MobileNavLink>
+        <MobileNavLink href="/app/lists" path={path}>
           <ListTodo />
           <span>Lists</span>
-        </Link>
-        <Link
-          href="/app/search"
-          className={cn(
-            "flex flex-col items-center justify-center px-3 py-1.5",
-            {
-              "text-primary": isActive(path, "/app/search"),
-            },
-          )}
-        >
-          <Search />
-          <span>Search</span>
-        </Link>
-        <Link
-          href="/app/settings"
-          className={cn(
-            "flex flex-col items-center justify-center px-3 py-1.5",
-            {
-              "text-primary": isActive(path, "/app/settings"),
-            },
-          )}
-        >
+        </MobileNavLink>
+        <MobileNavLink href="/app/products" path={path}>
+          <Library />
+          <span>Products</span>
+        </MobileNavLink>
+        <MobileNavLink href="/app/account" path={path}>
           <Settings />
           <span>Settings</span>
-        </Link>
+        </MobileNavLink>
       </div>
     </div>
+  );
+};
+
+interface MobileNavLinkProps {
+  path: string;
+  href: string;
+  children: ReactNode;
+}
+
+const isActive = (path: string, href: string): boolean => {
+  const segments = path.split("/");
+
+  // path should always have at least 2 segments, something went wrong
+  if (segments.length < 2) return false;
+
+  if (segments.length === 2) {
+    return href === `/${segments[1]}`;
+  } else {
+    return href === `/${segments[1]}/${segments[2]}`;
+  }
+};
+
+const MobileNavLink = ({ path, href, children }: MobileNavLinkProps) => {
+  return (
+    <Link
+      href={href}
+      className={cn(
+        "flex flex-col items-center justify-center rounded-lg px-3 py-1.5",
+        {
+          "bg-primary/10 text-primary": isActive(path, href),
+        },
+      )}
+    >
+      {children}
+    </Link>
   );
 };
 

@@ -4,17 +4,22 @@ import { Button } from "./ui/button";
 import ThemeToggle from "./theme-toggle";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { getServerAuthSession } from "@/server/auth";
 
-const Header = () => {
+const Header = async () => {
+  const session = await getServerAuthSession();
+
   return (
-    <header className={cn("h-16 w-full border-b px-2 py-1")}>
+    <header className={cn("h-16 w-full border-b px-3 py-1")}>
       <nav className="flex h-full items-center justify-between">
         <Logo />
         <div className="flex items-center justify-center gap-2">
           <ThemeToggle />
-          <Button asChild>
-            <Link href="/sign-in">Sign in</Link>
-          </Button>
+          {!session && (
+            <Button asChild>
+              <Link href="/sign-in">Sign in</Link>
+            </Button>
+          )}
         </div>
       </nav>
     </header>
