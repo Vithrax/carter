@@ -3,6 +3,7 @@ import React from "react";
 import { Button } from "./ui/button";
 import { Chrome } from "lucide-react";
 import { signIn } from "next-auth/react";
+import Link from "next/link";
 
 const SignIn = () => {
   return (
@@ -14,13 +15,19 @@ const SignIn = () => {
       </Button>
       <p className="text-center text-sm text-muted-foreground">
         By creating Carter account you are accepting our{" "}
-        <span className="font-medium underline underline-offset-4 transition-all hover:text-primary">
+        <Link
+          href="/terms"
+          className="font-medium underline underline-offset-4 transition-all hover:text-primary"
+        >
           Terms
-        </span>{" "}
+        </Link>{" "}
         and{" "}
-        <span className="font-medium underline underline-offset-4 transition-all hover:text-primary">
+        <Link
+          href="/policy"
+          className="font-medium underline underline-offset-4 transition-all hover:text-primary"
+        >
           Policy
-        </span>
+        </Link>
       </p>
     </div>
   );

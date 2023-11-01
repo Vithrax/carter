@@ -1,10 +1,9 @@
 import React from "react";
 import Logo from "./logo";
-import { Button } from "./ui/button";
 import ThemeToggle from "./theme-toggle";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { getServerAuthSession } from "@/server/auth";
+import LoginButton from "./login-button";
 
 const Header = async () => {
   const session = await getServerAuthSession();
@@ -15,11 +14,7 @@ const Header = async () => {
         <Logo />
         <div className="flex items-center justify-center gap-2">
           <ThemeToggle />
-          {!session && (
-            <Button asChild>
-              <Link href="/sign-in">Sign in</Link>
-            </Button>
-          )}
+          <LoginButton session={session} />
         </div>
       </nav>
     </header>

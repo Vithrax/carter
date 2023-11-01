@@ -18,13 +18,15 @@
     "noUncheckedIndexedAccess": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "plugins": [{ "name": "next" }]
   },
   "include": [
     ".eslintrc.cjs",
     "next-env.d.ts",
+    "contentlayer.config.js",
     "**/*.ts",
     "**/*.tsx",
     "**/*.cjs",
