@@ -16,14 +16,14 @@ const SignIn = () => {
       <p className="text-center text-sm text-muted-foreground">
         By creating Carter account you are accepting our{" "}
         <Link
-          href="/terms"
+          href="/legal/terms"
           className="font-medium underline underline-offset-4 transition-all hover:text-primary"
         >
           Terms
         </Link>{" "}
         and{" "}
         <Link
-          href="/policy"
+          href="/legal/policy"
           className="font-medium underline underline-offset-4 transition-all hover:text-primary"
         >
           Policy
