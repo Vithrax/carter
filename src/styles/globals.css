@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* disabled tap color, more native feel */
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 @layer base {
   html {
     @apply scroll-smooth;
