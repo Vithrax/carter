@@ -3,9 +3,13 @@
 import React from "react";
 import { Button } from "./ui/button";
 import { signOut } from "next-auth/react";
-import { toast } from "sonner";
+import { api } from "@/trpc/react";
+import { useRouter } from "next/navigation";
 
 const AccountManageButtons = () => {
+  const { mutate: deleteAccount } = api.user.deleteUser.useMutation();
+  const router = useRouter();
+
   return (
     <>
       <Button
@@ -18,7 +22,10 @@ const AccountManageButtons = () => {
       <Button
         className="mx-5 mt-4"
         variant="destructive"
-        onClick={() => toast("Not implemented yet :)")}
+        onClick={() => {
+          deleteAccount();
+          router.push("/");
+        }}
       >
         Delete Account
       </Button>
