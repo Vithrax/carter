@@ -9,7 +9,7 @@ const Layout = async ({ children }: LayoutProps) => {
 
   return (
     <div className="relative">
-      <main className="h-[calc(100dvh-9rem)] overflow-auto bg-muted dark:bg-zinc-950">
+      <main className="h-[calc(100dvh-7rem)] overflow-auto bg-muted dark:bg-zinc-950">
         {children}
       </main>
       <MobileNav />

@@ -1,7 +1,8 @@
+import Sheet from "@/components/drawer";
 import React from "react";
 
 const Page = () => {
-  return <div>Page</div>;
+  return <Sheet />;
 };
 
 export default Page;
