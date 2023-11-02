@@ -25,11 +25,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn(GeistSans.className, "antialiased")}>
         <Providers headers={headers()}>
+          <Toaster position="top-center" />
           <div className="overscroll-hidden grid min-h-[100dvh] w-full grid-rows-[auto,1fr,auto]">
             <Header />
             {children}
           </div>
-          <Toaster />
         </Providers>
       </body>
     </html>

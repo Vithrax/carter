@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { redirect } from "next/navigation";
 import { Calendar } from "lucide-react";
+import AccountManageButtons from "@/components/account-manage";
 
 const Page = async () => {
   const user = await api.user.getUserData.query();
@@ -11,8 +12,8 @@ const Page = async () => {
   console.log(user);
 
   return (
-    <div className="flex flex-col">
-      <div className="relative h-32 w-full bg-zinc-800">
+    <div className="flex h-full w-full flex-col pb-4">
+      <div className="relative h-32 w-full bg-zinc-700">
         <div className="absolute bottom-[0%] right-[50%] h-24 w-24 translate-x-[50%] translate-y-[50%] overflow-hidden rounded-full border-8 border-muted bg-white">
           <Image
             src={user.image ?? ""}
@@ -33,6 +34,7 @@ const Page = async () => {
           })}
         </div>
       </div>
+      <AccountManageButtons />
     </div>
   );
 };
