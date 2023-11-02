@@ -1,6 +1,5 @@
 import { relations, sql } from "drizzle-orm";
 import {
-  bigint,
   index,
   int,
   mysqlTableCreator,
@@ -28,6 +27,7 @@ export const users = mysqlTable("user", {
     fsp: 3,
   }).default(sql`CURRENT_TIMESTAMP(3)`),
   image: varchar("image", { length: 255 }),
+  created_at: timestamp("created_at", { mode: "date", fsp: 3 }).defaultNow(),
 });
 
 export const usersRelations = relations(users, ({ many }) => ({
