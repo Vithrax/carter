@@ -2,6 +2,11 @@ import MobileNav from "@/components/mobile-nav";
 import { getServerAuthSession } from "@/server/auth";
 import type { LayoutProps } from "@/types";
 import { redirect } from "next/navigation";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Carter | Main",
+};
 
 const Layout = async ({ children }: LayoutProps) => {
   const session = await getServerAuthSession();

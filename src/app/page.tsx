@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { getServerAuthSession } from "@/server/auth";
@@ -274,6 +275,8 @@ export default async function Home() {
           <Link href="/sign-in">Start saving</Link>
         </Button>
       </section>
+
+      <Footer />
     </main>
   );
 }

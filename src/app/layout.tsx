@@ -6,7 +6,6 @@ import { headers } from "next/headers";
 import Providers from "@/components/providers";
 import { Toaster } from "sonner";
 import Header from "@/components/header";
-import Footer from "@/components/footer";
 import type { Metadata } from "next";
 import { cn } from "@/lib/utils";
 
@@ -30,7 +29,6 @@ export default function RootLayout({
             <Header />
             {children}
           </div>
-          <Footer />
           <Toaster />
         </Providers>
       </body>
