@@ -3,14 +3,17 @@
 import { Drawer } from "vaul";
 import { Button, type ButtonProps } from "./ui/button";
 import { type ReactNode } from "react";
+import { useSheetStore } from "@/state/sheet-state";
 
 interface SheetProps extends ButtonProps {
   triggerContent: ReactNode;
 }
 
 const Sheet = ({ triggerContent, children, ...props }: SheetProps) => {
+  const { isOpen, setIsOpen } = useSheetStore();
+
   return (
-    <Drawer.Root>
+    <Drawer.Root open={isOpen} onOpenChange={setIsOpen}>
       <Button asChild {...props}>
         <Drawer.Trigger>{triggerContent}</Drawer.Trigger>
       </Button>

@@ -22,11 +22,14 @@ import { api } from "@/trpc/react";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { parseError } from "@/lib/trpcErrorParser";
+import { useSheetStore } from "@/state/sheet-state";
 
 const NewProductForm = () => {
+  const { setIsOpen } = useSheetStore();
   const { mutate: createProduct, isLoading } = api.product.create.useMutation({
     onSuccess: () => {
       toast.success("Product created successfully!");
+      setIsOpen(false);
     },
     onError: (err) => {
       toast.error(parseError(err.message));
