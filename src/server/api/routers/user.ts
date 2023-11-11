@@ -1,5 +1,5 @@
 import { createTRPCRouter, protectedProcedure } from "@/server/api/trpc";
-import { users } from "@/server/db/schema";
+import { users } from "@/server/db/schema/auth";
 import { eq } from "drizzle-orm";
 
 export const userRouter = createTRPCRouter({

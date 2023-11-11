@@ -9,8 +9,6 @@ const Page = async () => {
   const user = await api.user.getUserData.query();
   if (!user) redirect("/sign-in");
 
-  console.log(user);
-
   return (
     <div className="flex h-full w-full flex-col pb-4">
       <div className="relative h-32 w-full bg-zinc-700">

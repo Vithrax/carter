@@ -6,7 +6,6 @@ import {
   primaryKey,
   text,
   timestamp,
-  unique,
   varchar,
 } from "drizzle-orm/mysql-core";
 import { type AdapterAccount } from "next-auth/adapters";
@@ -89,17 +88,5 @@ export const verificationTokens = mysqlTable(
   },
   (vt) => ({
     compoundKey: primaryKey(vt.identifier, vt.token),
-  }),
-);
-
-export const products = mysqlTable(
-  "products",
-  {
-    id: int("id").primaryKey().notNull().autoincrement(),
-    name: varchar("name", { length: 255 }).notNull(),
-    userId: varchar("userId", { length: 255 }).notNull(),
-  },
-  (p) => ({
-    unq: unique().on(p.name, p.userId),
   }),
 );

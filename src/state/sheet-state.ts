@@ -5,7 +5,7 @@ interface SheetState {
   setIsOpen: (isOpen: boolean) => void;
 }
 
-export const useSheetStore = create<SheetState>()((set) => ({
+export const useSheetStore = create<SheetState>((set) => ({
   isOpen: false,
   setIsOpen: (isOpen) => set({ isOpen }),
 }));

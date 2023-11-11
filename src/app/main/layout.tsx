@@ -3,6 +3,7 @@ import { getServerAuthSession } from "@/server/auth";
 import type { LayoutProps } from "@/types";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
+import Sheet from "@/components/sheet";
 
 export const metadata: Metadata = {
   title: "Carter | Main",
@@ -18,6 +19,7 @@ const Layout = async ({ children }: LayoutProps) => {
         {children}
       </main>
       <MobileNav />
+      <Sheet />
     </div>
   );
 };

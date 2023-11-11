@@ -22,14 +22,22 @@ import { api } from "@/trpc/react";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { parseError } from "@/lib/trpcErrorParser";
-import { useSheetStore } from "@/state/sheet-state";
+import { useRouter } from "next/navigation";
+import { type Product } from "@/server/db/schema/product";
 
-const NewProductForm = () => {
-  const { setIsOpen } = useSheetStore();
+interface NewProductFormProps {
+  setIsSheetOpen: (state: boolean) => void;
+  initialData?: Product;
+}
+
+const NewProductForm = ({ setIsSheetOpen }: NewProductFormProps) => {
+  const router = useRouter();
+
   const { mutate: createProduct, isLoading } = api.product.create.useMutation({
     onSuccess: () => {
+      router.refresh();
       toast.success("Product created successfully!");
-      setIsOpen(false);
+      setIsSheetOpen(false);
     },
     onError: (err) => {
       toast.error(parseError(err.message));
